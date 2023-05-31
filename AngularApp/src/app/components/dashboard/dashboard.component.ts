@@ -107,7 +107,6 @@ export class DashboardComponent {
       }
 
       if (action === "update") {
-        debugger;
         params.api.stopEditing(false);
         //params.api.setRowData(params.node.data)
         this._service.updateTask(params.node.data).subscribe(response=>{

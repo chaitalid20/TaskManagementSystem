@@ -4,21 +4,17 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppComponent } from './app.component';
 import { authGuard } from './auth.guard';
+import { CreateTaskComponent } from './components/create-task/create-task.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-    children:[
-      { path:'login', loadChildren:() => import('./components/login/login.module')
-      .then(m =>m.LoginModule)},
-      { path:'dashboard', loadChildren:() => import('./components/dashboard/dashboard.module')
-      .then(m =>m.DashboardModule),},
-      //canActivate:[authGuard]}
-      { path:'create', loadChildren:() => import('./components/create-task/create-task.module')
-      .then(m =>m.CreateTaskModule),}
-    ]
-  }
+    redirectTo: "/login",
+    pathMatch: 'full'
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'create', component: CreateTaskComponent },
  ];
 
 @NgModule({

@@ -55,9 +55,8 @@ namespace WebApp.Controllers
         }
 
         //upadte task
-        [HttpPut]
-        [Route("{id:int}")]
-        public async Task<IActionResult> UpdateTask([FromRoute] int id, [FromBody] Tasks task)
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateTask(int id, [FromBody] Tasks task)
         {
             var existingTask = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id);
             if(existingTask != null)
@@ -75,9 +74,8 @@ namespace WebApp.Controllers
         }
 
         //Delete task
-        [HttpDelete]
-        [Route("{id:int}")]
-        public async Task<IActionResult> DeleteTask([FromRoute] int id)
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteTask(int id)
         {
             var existingTask = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id);
             if (existingTask != null)

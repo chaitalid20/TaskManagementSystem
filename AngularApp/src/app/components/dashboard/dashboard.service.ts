@@ -13,23 +13,17 @@ export class DashboardService {
 id: any;
   //Get All Task data from API
   getAllTasks():Observable<Task[]>{
-    return this.http.get<Task[]>(appConfig.apiUrl)
+    return this.http.get<Task[]>(appConfig.apiUrl +'Task')
   }
 
   //Update Task inn Db
-
-
   updateTask(values: Task): Observable<Task>{
-    debugger;
-    return this.http.put<Task>(appConfig.apiUrl + '/'+values.id, values);
-    //return this.http.put<Task>(`${appConfig.apiUrl}/${values.id}`, values)
-      //.pipe(
-        //catchError(this.handleError('updateHero', hero))
-      //);
+    let id = values.id;
+    return this.http.put<Task>(appConfig.apiUrl + 'Task/update?id=' + values.id, values);
   }
 
   //detelte task
   deleteTask(id: any){
-    return this.http.delete(appConfig.apiUrl + '/'+ id);
+    return this.http.delete<Task>(appConfig.apiUrl + 'Task/delete?id=' + id);
   }
 }

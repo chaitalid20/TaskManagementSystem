@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,9 +9,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginService } from '../services/login.service';
 import {​​HttpClientModule}​​ from '@angular/common/http';
 import { AgGridModule } from 'ag-grid-angular';
-import { LoginModule } from './components/login/login.module';
-import { DashboardModule } from './components/dashboard/dashboard.module';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { CanActiveGuard } from './components/common/can-active.service';
 
 
 @NgModule({
@@ -23,6 +22,7 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
 ],
   imports: [
     BrowserModule,
@@ -31,10 +31,8 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
     FormsModule,
     HttpClientModule,
     AgGridModule,
-    LoginModule,
-    DashboardModule,
   ],
-  providers: [LoginService],
+  providers: [LoginService, CanActiveGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
