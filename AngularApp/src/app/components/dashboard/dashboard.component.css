@@ -1,0 +1,19 @@
+.createButton{
+  padding-bottom: 1%;
+}
+
+button {
+  width: 5%;
+  padding: 12px 0;
+  /* margin: 13px auto; */
+  border-radius: 5px;
+  border: none;
+  background: #8ebf42;
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  color: #fff;
+}
+button:hover {
+background: #82b534;
+}

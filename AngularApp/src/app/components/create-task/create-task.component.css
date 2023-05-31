@@ -1,0 +1,22 @@
+
+  button {
+    width: 9%;
+    padding: 12px 0;
+    margin-top: 1%;
+    /* padding-top: 20%; */
+    border-radius: 5px;
+    border: none;
+    background: #8ebf42;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    color: #fff;
+  }
+  button:hover {
+  background: #82b534;
+  }
+
+.container{
+  border-style: groove;
+  width: fit-content;
+}

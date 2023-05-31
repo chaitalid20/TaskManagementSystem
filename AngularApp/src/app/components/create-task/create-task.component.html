@@ -1,0 +1,54 @@
+
+<h3 style="text-align:justify ;">Create Task</h3>
+<div class="">
+<div class="row">
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+<div class="row">
+  <div class="col-md-12">
+  <div class="form-group">
+    <label class="center-block">Task Name:
+    <input class="form-control" formControlName="taskName">
+    <div *ngIf="createForm.controls['taskName'].invalid && createForm.controls['taskName'].touched" class="alert alert-danger">
+      Name is required.
+     </div>
+    </label>
+ </div>
+</div>
+ <div class="form-group">
+  <label class="center-block">Task Description:
+  <input class="form-control" formControlName="taskDescription">
+  <div *ngIf="createForm.controls['taskDescription'].invalid && createForm.controls['taskDescription'].touched" class="alert alert-danger">
+    Description is required.
+    </div>
+  </label>
+</div>
+
+</div>
+
+<div class="row">
+<div class="form-group">
+  <label class="center-block">Priority:
+  <input class="form-control" formControlName="priority">
+  <div *ngIf="createForm.controls['priority'].invalid && createForm.controls['priority'].touched" class="alert alert-danger">
+    Priority is required.
+  </div>
+  </label>
+</div>
+
+<div class="form-group">
+  <label class="center-block">Status:
+  <input class="form-control" formControlName="status">
+  <div *ngIf="createForm.controls['status'].invalid && createForm.controls['status'].touched" class="alert alert-danger">
+    Status is required.
+  </div>
+  </label>
+</div>
+
+</div>
+
+<div class="row">
+<button class="button" type="submit">Create</button>
+</div>
+</form>
+</div>
+

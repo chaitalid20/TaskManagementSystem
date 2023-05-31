@@ -1,0 +1,24 @@
+
+
+<h2 style="text-align: center;">Welcome To Dashboard</h2>
+<div class="createButton">
+  <button class="button" type="submit" routerLink="/create" >Create Task</button>
+</div>
+<!-- AG Grid Angular Component -->
+<ag-grid-angular
+    #agGrid
+    style="width: auto; height: 400px;"
+    id="myGrid"
+    class="ag-theme-alpine"
+    [modules]="modules"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [enableRangeSelection]="true"
+    [rowData]="rowData"
+    (gridReady)="onGridReady($event)"
+    (rowEditingStopped)="onRowEditingStopped($event)"
+    (rowEditingStarted)="onRowEditingStarted($event)"
+    (cellClicked)="onCellClicked($event)"
+    editType="fullRow"
+    [suppressClickEdit]="true"
+  ></ag-grid-angular>
